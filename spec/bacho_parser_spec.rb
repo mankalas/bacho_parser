@@ -3,7 +3,7 @@ RSpec.describe BachoParser do
     expect(BachoParser::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe "#parse" do
+
   end
 end
