@@ -1,8 +1,6 @@
 require "bacho_parser/record"
 require "bacho_parser/field"
 
-require "date"
-
 module BachoParser
   class FileHeaderRecord < Record
     def initialize(line)
@@ -26,7 +24,7 @@ module BachoParser
     end
 
     def processing_date
-      Date.strptime(field_at(21, 8, type: :number), "%d%m%Y")
+      field_at(21, 8, type: :date)
     end
 
     def bank_name

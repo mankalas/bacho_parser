@@ -22,6 +22,22 @@ RSpec.describe BachoParser::FileHeaderRecord do
       end
     end
 
+    context "invalid bank or supplier field" do
+      let(:line) { "A00  000030000000000022102008WESTPAC BANKING CORPORATION                                                                                                      Y " }
+
+      it "does not parse" do
+        expect { subject.bank_or_supplier }.to raise_error(BachoParser::ParseError)
+      end
+    end
+
+    context "invalid bank or supplier field" do
+      let(:line) { "A00  000030000000000022102008WESTPAC BANKING CORPORATION                                                                                                      Y " }
+
+      it "does not parse" do
+        expect { subject.bank_or_supplier }.to raise_error(BachoParser::ParseError)
+      end
+    end
+
     context "invalid processing date" do
       let(:line) { "A0030000030000000000022a02008WESTPAC BANKING CORPORATION                                                                                                      Y " }
 
